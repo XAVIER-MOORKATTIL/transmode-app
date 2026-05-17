@@ -10,7 +10,8 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/initialize-handshake');
+      // Switched from localhost to the authenticated live Render network gateway
+      const response = await axios.post('https://transmode-app.onrender.com/api/v1/initialize-handshake');
       if (response.data.success) {
         setTelemetry(response.data);
       }
